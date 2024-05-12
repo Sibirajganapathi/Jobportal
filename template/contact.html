@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' %}">
+</head>
+<body><section class="section-hero overlay inner-page bg-image" style="background-image: url('{% static 'images/hero_1.jpg' %}');"
+    id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold">Contact Us</h1>
+          <div class="custom-breadcrumbs">
+            <a href="{% url 'jobapp:home' %}">Home</a> <span class="mx-2 slash">/</span>
+            <span class="text-white"><strong>contact</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+        <!-- <div class="container" style="border: 5px solid rgb(175, 238, 138); border-radius: 15px;" >
+            <div class="contact-wrapper">
+                <div class="contact-from">
+                    <h3></h3>
+                    <fieldset>
+                    <form>
+                       <h3 style="color: gray; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:20px;">NAME</h3>
+                        <div class="from-group" style="border: 5px black solid; width: 100%; border-radius: 15px;">
+                            <input type="text" name="name" placeholder="your name">
+                        </div><br>
+                        <h3>Email</h3>
+                        <div class="from-group" style="border: 5px black solid; width: 100%; border-radius: 15px;">
+                            <input type="email" name="email" placeholder="your email">
+                        </div><br>
+                        <h3>Message</h3>
+                        <div class="from-group" style="border: 5px black solid; width: 100%; border-radius: 15px;">
+                            <textarea name="message" placeholder="your message"></textarea>
+                        </div><br>
+                        <button type="submit">send message</button>
+                    </form>
+                </fieldset>
+                </div>
+                -- <div class="contact-info">
+                    <h3>contact information</h3>
+                    <p><i class="fas fa-phone"></i>+1 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i>abc@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i>123 street,city,country</p>
+                </div> --
+            </div>
+        </div>
+  
+    </section> -->
+    <div class="container-fluid" >
+        
+        <div class="row mt-5">
+                   <div class="col-md-4 mt-5 mx-auto shadow-lg">
+                           <h3 align="center">Contact us</h3><br>
+                           
+                           <form method="POST">
+                            {% csrf_token %} 
+                                <div class="mb-3">
+                                    <label for="input1" class="form-label"><strong>Username:</strong></label>
+                                    <input type="text" class="form-control" name="uname" id="input1" placeholder="Enter Username">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="input2" class="form-label"><strong>Email:</strong></label>
+                                    <input type="email" class="form-control" name="uemail" id="input2" placeholder="Enter Email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="input3" class="form-label"><strong>Message</strong></label>
+                                    <textarea name="msg" class="form-control" id="input3" cols="30" rows="5"></textarea>
+                                </div>
+                               
+                                <div class="mb-3">
+                                  
+                                     <button type="submit" class="btn btn-primary" >Submit</button>
+                                      </div>
+                           </form>
+                          
+                   </div>   
+        </div>
+</div>
+<br>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}
